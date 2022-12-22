@@ -11,7 +11,11 @@ a {
 }
 
 .login-link {
-	border-right-width: 1px;
-	border-right-color: white;
-	border-right-style: solid;
+	border-right: 1px solid white;
+}
+
+.card-custom {
+	border: 5px solid black;
+	background-color: lightgray;
+	text-align: center;
 }
