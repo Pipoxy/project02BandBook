@@ -1,0 +1,17 @@
+* {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.custom-nav a {
+	padding-right: 5px;
+}
+
+.login-link {
+	border-right-width: 1px;
+	border-right-color: white;
+	border-right-style: solid;
+}
