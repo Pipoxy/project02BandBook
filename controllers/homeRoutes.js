@@ -1,4 +1,6 @@
-const router = require('express').Router();
+const router = require("express").Router();
+const { Workout, User } = require("../models");
+const authorized = require("../helpers/authorized");
 
 // get all posts for homepage
 router.get('/', async (req, res) => {
@@ -10,25 +12,5 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-router.get('/profile', async (req, res) => {
-    try {
-  
-  
-      res.render('profile');
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-
-  router.get('/workout', async (req, res) => {
-    try {
-  
-  
-      res.render('workout');
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
 
 module.exports = router;

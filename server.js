@@ -1,8 +1,11 @@
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const exphbs = require('express-handlebars');
-// const helpers = require('./utils/helpers');
+
+const path = require("path");
+const express = require("express");
+const session = require("express-session");
+// exphbs could cause an error?
+const exphbs = require("express-handlebars");
+const routes = require("./controllers");
+const helpers = require("./utils/helpers");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,11 +19,13 @@ const sess = {
     maxAge: 300000,
     httpOnly: true,
     secure: false,
+
     sameSite: 'strict',
   },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
+
     db: sequelize
   })
 };
