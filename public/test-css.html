@@ -23,8 +23,8 @@
 					<!-- Conditionally render login or logout links -->
 					<!-- {{#if logged_in}} {{else}} -->
 					-->
-					<a href="/login" class="link-light login-link">login</a>
-					<a href="/profile" class="link-light">profile</a>
+					<a href="/home" class="link-light login-link">Home</a>
+					<a href="/profile" class="link-light">Profile</a>
 					<!--  | {{/if}} -->
 				</div>
 			</div>
@@ -32,62 +32,42 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-12 col-md-6 col-lg-4 pb-5">
+				<div class="col-sm-12 col-md-6 pb-5">
 					<div class="card card-custom">
 						<div class="card-body">
 							<h5 class="card-title">Login</h5>
 							<br />
-							<input type="text" placeholder="Email" id="input-email" / >
-							<br /><br />
+							<input type="text" placeholder="Email" id="login-email" / >
 							<input
-								type="text"
+								type="password"
 								placeholder="Password"
-								id="input-password"
-							/><br /><br />
-							<a href="#" class="btn btn-dark">Go somewhere</a>
+								id="login-password"
+							/><br />
+							<a href="#" class="btn btn-dark">Login</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-12 col-md-6 col-lg-4 pb-5">
+				<div class="col-sm-12 col-md-6 pb-5">
 					<div class="card card-custom">
 						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								Some quick example text to build on the card title and make up the bulk
-								of the card's content.
-							</p>
-							<a href="#" class="btn btn-dark">Go somewhere</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md-6 col-lg-4 pb-5">
-					<div class="card card-custom">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								Some quick example text to build on the card title and make up the bulk
-								of the card's content.
-							</p>
-							<a href="#" class="btn btn-dark">Go somewhere</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md-6 col-lg-4 pb-5">
-					<div class="card card-custom">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								Some quick example text to build on the card title and make up the bulk
-								of the card's content.
-							</p>
-							<a href="#" class="btn btn-dark">Go somewhere</a>
+							<h5 class="card-title">Sign Up!</h5>
+							<br />
+							<input type="text" placeholder="Email" id="signup-email" / >
+							<input type="text" placeholder="User Name" id="signup-name" /><br />
+							<input
+								type="password"
+								placeholder="Password"
+								id="signup-password"
+							/><br />
+							<a href="#" class="btn btn-dark">Sign Up</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<main class="container container-fluid mt-5">
+		<main class="container-fluid">
+			<h2>Welcome To My Workout Tracker!</h2>
 			<!-- Render the sub layout -->
 			<!-- {{{ body }}} -->
 		</main>
