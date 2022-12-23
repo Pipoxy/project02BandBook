@@ -1,0 +1,21 @@
+* {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.custom-nav a {
+	padding-right: 5px;
+}
+
+.login-link {
+	border-right: 1px solid white;
+}
+
+.card-custom {
+	border: 5px solid black;
+	background-color: lightgray;
+	text-align: center;
+}
