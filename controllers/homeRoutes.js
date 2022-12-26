@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Workout, User } = require("../models");
-const authorized = require("../helpers/authorized");
+// const authorized = require("../helpers/authorized");
 
 // get all posts for homepage
 router.get('/', async (req, res) => {
