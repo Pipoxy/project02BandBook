@@ -6,9 +6,10 @@ const logout = async function() {
     });
   
     if (response.ok) {
-    //   document.location.replace('/');
+      document.location.replace('/login');
     } else {
       alert("Can't log out");
+      console.log (response.status)
     }
   };
   
