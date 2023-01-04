@@ -1,5 +1,5 @@
 const sequelize = require("sequelize");
-const { User, Workout} = require("../models");
+const { User, Workouts } = require("../models");
 
 // requirer the json files for the data
 
@@ -12,4 +12,14 @@ const seedDatabase = async () => {
   });
 };
 
-for (const workout of workoutData)
+for (const workout of workoutData) {
+  await Workouts.create({
+    ...workout,
+    user_id: users[Math.floor(Math.random() * users.length)].id,
+  });
+}
+
+process.exit(0);
+};
+
+seedDatabase();
