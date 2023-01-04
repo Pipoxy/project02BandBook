@@ -40,14 +40,15 @@
 				</div>
 				<div class="col-sm-12 col-md-4 text-center custom-nav">
 					<!-- Conditionally render login or logout links -->
-					{{#if logged_in}}
+					
+					{{!-- {{#if logged_in}} --}}
 					
 						<a href="/profile" class="link-light">Profile</a>
-						<button class="" id="logout-button">logout</button>
-					{{else}}
+						<button class="link-light" id="logout-button">logout</button>
+					{{!-- {{else}} --}}
         				<a href="/login" id="logout-button" class="link-light">Login</a>
 		
-        			{{/if}}
+        			{{!-- {{/if}} --}}
 				</div>
 			</div>
 		</div> |
@@ -74,9 +75,9 @@
 		</div>
 
 		<!-- Render script for logged in users only -->
-		{{#if logged_in}}
+		{{!-- {{#if logged_in}} --}}
 			<script src='/js/logout.js'></script>
-  		{{/if}}
+  		{{!-- {{/if}} --}}
 	</body>
 
 
