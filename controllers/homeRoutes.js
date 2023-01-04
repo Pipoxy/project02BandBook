@@ -5,7 +5,7 @@ const { Workouts, User } = require('../models');
 // get all posts for homepage
 router.get('/', async (req, res) => {
 	try {
-		res.render('home');
+		res.render('login');
 	} catch (err) {
 		res.status(500).json(err);
 	}
