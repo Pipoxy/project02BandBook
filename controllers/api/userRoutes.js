@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({
       where: {
@@ -23,14 +23,14 @@ router.post('/login', async (req, res) => {
     });
 
     if (!user) {
-      res.status(400).json({ message: 'No user account found!' });
+      res.status(400).json({ message: "Account not found" });
       return;
     }
 
     const validPassword = user.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res.status(400).json({ message: 'No user account found1!' });
+      res.status(400).json({ message: "Account not found1" });
       return;
     }
 
@@ -39,14 +39,14 @@ router.post('/login', async (req, res) => {
       req.session.email = user.email;
       req.session.loggedIn = true;
 
-      res.json({ user, message: 'You are now logged in!' });
+      res.json({ user, message: "You are now logged in!" });
     });
   } catch (err) {
-    res.status(400).json({ message: 'No user account found2!' });
+    res.status(400).json({ message: "Account not found2" });
   }
 });
 
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();

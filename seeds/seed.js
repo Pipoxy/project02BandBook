@@ -1,5 +1,7 @@
+
 const sequelize = require("../config/connection");
 const { User,Workouts,Exercises } = require("../models");
+
 
 const userData = require("./userData.json");
 const workoutsData = require("./workouts.json");
@@ -12,7 +14,7 @@ async function seedDatabase() {
     individualHook: true,
     returning: true,
   });
-
+  
   const workouts = await Workouts.bullCreate(workoutsData,{
     returning: true
   });
@@ -24,4 +26,8 @@ async function seedDatabase() {
     });
   }
 
+process.exit(0);
 };
+seedDatabase();
+
+
