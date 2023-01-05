@@ -1,7 +1,7 @@
-const { Model, DataTypes } = require("sequelize");
+const { Model,DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Workouts extends Model {}
+class Workouts extends Model { }
 
 Workouts.init(
   {
@@ -28,6 +28,7 @@ Workouts.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
+    underscored: true,
     modelName: "workouts",
   }
 );
