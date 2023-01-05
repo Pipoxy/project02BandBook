@@ -39,16 +39,17 @@
 					<h1><a href="/" class="link-light">My Workout Tracker</a></h1>
 				</div>
 				<div class="col-sm-12 col-md-4 text-center custom-nav">
+
+					<a href="/profile" class="link-light">Profile</a>
+					<a href="/workout" class="link-light">Workouts</a>
+
 					<!-- Conditionally render login or logout links -->
-					
-					{{!-- {{#if logged_in}} --}}
-					
-						<a href="/profile" class="link-light">Profile</a>
-						<button class="link-light" id="logout-button">logout</button>
-					{{!-- {{else}} --}}
-        				<a href="/login" id="logout-button" class="link-light">Login</a>
+
+					{{#if logged_in}}
+				
+						<button class="link-light" id="logout-button">Logout</button>
 		
-        			{{!-- {{/if}} --}}
+        			{{/if}}
 				</div>
 			</div>
 		</div> |

@@ -8,7 +8,8 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
+a:hover,
+#logout-button:hover {
 	opacity: 50%;
 }
 
@@ -20,6 +21,10 @@ a:hover {
 	border-right: 1px solid white;
 }
 
+#logout-button {
+	background: none;
+	border: none;
+}
 /* Input Styles */
 
 #user-workout {
@@ -51,4 +56,10 @@ a:hover {
 .workout-card {
 	border-width: 1px;
 	background-color: white;
+}
+
+/* Other Styles */
+
+.hide {
+	display: none;
 }

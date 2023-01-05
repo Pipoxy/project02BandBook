@@ -5,7 +5,7 @@ const { Workouts, User } = require('../models');
 // get all posts for homepage
 router.get('/', async (req, res) => {
 	try {
-		res.render('login');
+		res.render('login', { logged_in: req.session.logged_in });
 	} catch (err) {
 		res.status(500).json(err);
 	}
@@ -35,7 +35,7 @@ router.get('/workout/:id', async (req, res) => {
 
 router.get('/profile', async (req, res) => {
 	try {
-		res.render('profile');
+		res.render('profile', { logged_in: true });
 	} catch (err) {
 		res.status(500).json(err);
 	}
