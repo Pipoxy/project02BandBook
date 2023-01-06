@@ -1,6 +1,6 @@
+
 const newWorkoutHandler = async (event) => {
 	event.preventDefault();
-
 	const workout = document.querySelector('#user-workout').value.trim();
 	const sets = document.querySelector('#user-sets').value.trim();
 	const reps = document.querySelector('#user-reps').value.trim();
