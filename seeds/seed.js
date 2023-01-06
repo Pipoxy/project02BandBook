@@ -10,7 +10,7 @@ const seedDatabase = async () => {
   await sequelize.sync({ focus: true });
 
   const users = await User.bulkCreate(userData,{
-    individualHook: true,
+    individualHooks: true,
     returning: true,
   });
 
@@ -23,12 +23,9 @@ const seedDatabase = async () => {
   }
 
 
-  for (const exercises of exercisesData) {
-    await Exercises.create({
-      ...exercises,
-      workout_id: workoutsData[Math.floor(Math.random() * workoutsData.length)].id
-    });
-  };
+  const exercises = await Exercises.bulkCreate(exercisesData,{
+    returning: true
+  });
 
 
   process.exit(0);
