@@ -2,8 +2,15 @@
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Link Styles */
+
 a {
 	text-decoration: none;
+}
+
+a:hover,
+#logout-button:hover {
+	opacity: 50%;
 }
 
 .custom-nav a {
@@ -14,8 +21,45 @@ a {
 	border-right: 1px solid white;
 }
 
+#logout-button {
+	background: none;
+	border: none;
+}
+/* Input Styles */
+
+#user-workout {
+	width: 90%;
+	background-color: ghostwhite;
+}
+
+.stats-input {
+	width: 30%;
+	background-color: ghostwhite;
+}
+
+/* Card Styles */
+
 .card-custom {
 	border: 5px solid black;
 	background-color: lightgray;
 	text-align: center;
+	/* height: 17.5rem; */
+}
+
+.card-custom input {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+.workout-card {
+	border-width: 1px;
+	background-color: white;
+}
+
+/* Other Styles */
+
+.hide {
+	display: none;
 }

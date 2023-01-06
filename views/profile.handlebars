@@ -1,1 +1,65 @@
-<h2>this is the profile page</h2>
+<div class='container-fluid'>
+	<div class='row'>
+		<div class='col-sm-12 col-md-6 pb-5'>
+			<div class='card card-custom'>
+				<div class='card-body'>
+					<h5 class='card-title'>Recent Workouts
+					</h5>
+					<br />
+					<div class='container-fluid'>
+						<form class='row new-workout-form'>
+							<div class='col-6'>
+								<div class='card card-custom workout-card'>
+									<div class='card-body'>
+										<h6 class='card-title'>Workout
+										</h6>
+										<input type='text' placeholder='Workout Name' id='user-workout' />
+									</div>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class='card card-custom workout-card'>
+									<div class='card-body'>
+										<h6 class='card-title'>Stats
+										</h6>
+										<input
+											type='text'
+											placeholder='Sets'
+											id='user-sets'
+											class='stats-input'
+										/>
+										<input
+											type='text'
+											placeholder='Reps'
+											id='user-reps'
+											class='stats-input'
+										/>
+										<input
+											type='text'
+											placeholder='Weight'
+											id='user-weight'
+											class='stats-input'
+										/>
+
+									</div>
+								</div>
+							</div>
+							<button type='submit' class='hide'>Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='col-sm-12 col-md-6 pb-5'>
+			<div class='card card-custom'>
+				<div class='card-body'>
+					<h5 class='card-title'>Stats Graph
+					</h5>
+					<br />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src='./js/profile.js'></script>
