@@ -16,6 +16,11 @@ Exercises.init({
     type: DataTypes.STRING,
     allowNull: true,
   },
+  sets: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    defaultValue: 0
+  },
   reps: {
     type: DataTypes.INTEGER,
     allowNull: true,
