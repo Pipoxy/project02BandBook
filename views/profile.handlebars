@@ -44,8 +44,14 @@
 									</div>
 								</div>
 							</div>
-							<button type='submit' class='hide'>Submit</button>
+							<button type='submit' class=''>Submit</button>
 						</form>
+						{{#if workout.length}}
+							<h3>current workouts:</h3>
+							{{#each workout}}
+								<p><a href='/workout/{{workout.id}}'></a>{{workout.name}}</p>
+							{{/each}}
+						{{/if}}
 					</div>
 				</div>
 			</div>

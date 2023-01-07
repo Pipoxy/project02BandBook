@@ -7,14 +7,15 @@ const newWorkoutHandler = async (event) => {
 	const weight = document.querySelector('#user-weight').value.trim();
 
 	if (workout && sets && reps && weight) {
-		console.log(workout, sets, reps, weight);
-		const response = await fetch(`/api/workout`, {
+		const response = await fetch(`/api/workout/`, {
 			method: 'POST',
 			body: JSON.stringify({ workout, sets, reps, weight }),
 			headers: {
 				'Content-Type': 'application/json',
 			},
 		});
+
+		console.log('information:', workout, sets, reps, weight);
 
 		if (response.ok) {
 			document.location.replace('/profile');
