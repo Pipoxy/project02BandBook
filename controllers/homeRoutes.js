@@ -36,7 +36,14 @@ router.get("/workout/:id", async (req, res) => {
 
 router.get("/profile", authorized, async (req, res) => {
   try {
-    res.render("profile", { logged_in: true });
+    const workoutData=await Workouts.findAll({
+        // where:{
+        // user_id:req.session.user_id
+        // }
+     })
+    const workouts=workoutData.map(workout=>workout.get({plain:true}))
+    console.log (workouts)
+    res.render("profile", { workouts,logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }

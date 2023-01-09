@@ -5,14 +5,13 @@ class Workouts extends Model {}
 
 Workouts.init(
 	{
-		user_id: {
-			type: DataTypes.INTEGER,
-			references: {
-				model: 'user',
-				key: 'id',
-			},
+		id:{
+			type:DataTypes.INTEGER,
+			autoIncrement:true,
+			allowNull:false,
+			primaryKey:true,
 		},
-		name: {
+			name: {
 			type: DataTypes.STRING,
 			allowNull: true,
 		},
@@ -30,6 +29,15 @@ Workouts.init(
 			type: DataTypes.INTEGER,
 			allowNull: true,
 		},
+		user_id: {
+			type: DataTypes.INTEGER,
+			references: {
+				model: 'user',
+				key: 'id',
+			},
+		},
+
+
 	},
 	{
 		sequelize,

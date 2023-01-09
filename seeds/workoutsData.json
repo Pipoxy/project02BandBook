@@ -3,18 +3,21 @@
 		"name": "benchpress",
 		"sets": 3,
 		"reps": 15,
-		"weight": 50
+		"weight": 50,
+		"user_id":1
 	},
 	{
 		"name": "squats",
 		"sets": 3,
 		"reps": 10,
-		"weight": 35
+		"weight": 35,
+		"user_id":1
 	},
 	{
 		"name": "curls",
 		"sets": 3,
 		"reps": 15,
-		"weight": 25
+		"weight": 25,
+		"user_id":1
 	}
 ]
