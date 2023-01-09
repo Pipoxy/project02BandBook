@@ -7,7 +7,6 @@
 [Description](#description)
 [Installation](#Installation)
 [Usage](#Usage)
-[Contrubutors](#Contributors)
 [Tests](#Tests)
 [License](#License)
 
