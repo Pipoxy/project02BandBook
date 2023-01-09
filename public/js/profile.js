@@ -16,7 +16,6 @@ const newWorkoutHandler = async (event) => {
 		console.log(response);
 
 		if (response.ok) {
-			console.log('It Worked');
 			// document.location.replace('/profile');
 		} else {
 			alert('Failed to create workout');

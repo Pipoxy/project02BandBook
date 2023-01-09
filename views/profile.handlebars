@@ -46,7 +46,7 @@
 									</div>
 								</div>
 							</div>
-							<button type='submit' class='hide'>Submit</button>
+							<button type='submit'>Submit</button>
 						</form>
 						{{#if workout.length}}
 							<div class='col-md-6 blog-list'>
@@ -57,6 +57,9 @@
 										<div class=''>
 											<h4><a href='/workout/{{workout.id}}'>{{workout.name}}</a></h4>
 										</div>
+                  <div>sets, {{workout.sets}} </div>
+                   <div>sets, {{workout.reps}} </div>
+                    <div>sets, {{workout.weight}} </div>
 										<div class=''>
 											<button class='' data-id='{{workout.id}}'>DELETE</button>
 										</div>
@@ -84,30 +87,32 @@
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
           <script>
+            
             const ctx = document.getElementById('workoutChart'); new Chart(ctx,
             { type: 'line', data: { labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            datasets: [{ label: 'Deadlift', data: [12, 19, 3, 17, 6, 3, 7],
+            datasets: [{ label: 'Deadlift', data: [1,2,3,4,5,6,7],
             borderColor: "white", backgroundColor: "white",
             pointBackgroundColor: "#55bae7", pointBorderColor: "#55bae7",
             pointHoverBackgroundColor: "#55bae7", pointHoverBorderColor:
             "#55bae7"}, 
-			{ label: 'Bench', data: [2, 29, 5, 5, 2, 3, 10],
+			{ label: 'Bench', data: [4, 5, 6, 7, 8, 9, 10],
             borderColor: "green", backgroundColor:
             "green", pointBackgroundColor: "#green", pointBorderColor:
             "#green", pointHoverBackgroundColor: "#green",
             pointHoverBorderColor: "#green"}, 
 
 			{ label: 'Power Lifting', data:
-            [11, 29, 5, 19, 2, 13, 8], borderColor: "yellow", backgroundColor:
+            [11, 29, 25, 19, 15, 13, 8], borderColor: "yellow", backgroundColor:
             "yellow", pointBackgroundColor: "#yellow", pointBorderColor:
             "#yellow", pointHoverBackgroundColor: "#yellow",
             pointHoverBorderColor: "#yellow"}, 
 
 			{ label: 'Squats', data:
-            [1, 9, 5, 19, 2, 5, 8], borderColor: "blue", backgroundColor:
+            [1, 9, 11, 22, 23, 24, 28], borderColor: "blue", backgroundColor:
             "blue", pointBackgroundColor: "#blue", pointBorderColor:
             "#blue", pointHoverBackgroundColor: "#blue",
             pointHoverBorderColor: "#blue"}] } });
+          
           </script>
 
         </div>
