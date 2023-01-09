@@ -1,87 +1,83 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12 col-md-6 pb-5">
-      <div class="card card-custom">
-        <div class="card-body">
-          <h5 class="card-title">Recent Workouts
-          </h5>
-          <br />
-          <div class="container-fluid">
-            <form class="row new-workout-form">
-              <div class="col-6">
-                <div class="card card-custom workout-card">
-                  <div class="card-body">
-                    <h6 class="card-title">Workout
-                    </h6>
-                    <input
-                      type="text"
-                      placeholder="Workout Name"
-                      id="user-workout"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="card card-custom workout-card">
-                  <div class="card-body">
-                    <h6 class="card-title">Stats
-                    </h6>
-                    <input
-                      type="text"
-                      placeholder="Sets"
-                      id="user-sets"
-                      class="stats-input"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Reps"
-                      id="user-reps"
-                      class="stats-input"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Weight"
-                      id="user-weight"
-                      class="stats-input"
-                    />
+<h2>Welcome, {{user_name}}</h2>
 
-                  </div>
-                </div>
-              </div>
-              <button type="submit" class="hide">Submit</button>
-            </form>
-            {{#if workouts.length}}
-              <div class="col-md-6 blog-list">
-                <h3>Workouts</h3>
+<div class='container-fluid'>
+	<div class='row'>
+		<div class='col-sm-12 col-md-6 pb-5'>
+			<div class='card card-custom'>
+				<div class='card-body'>
+					<h5 class='card-title'>Recent Workouts
+					</h5>
+					<br />
+					<div class='container-fluid'>
+						<form class='row new-workout-form'>
+							<div class='col-6'>
+								<div class='card card-custom workout-card'>
+									<div class='card-body'>
+										<h6 class='card-title'>Workout
+										</h6>
+										<input type='text' placeholder='Workout Name' id='user-workout' />
+									</div>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class='card card-custom workout-card'>
+									<div class='card-body'>
+										<h6 class='card-title'>Stats
+										</h6>
+										<input
+											type='text'
+											placeholder='Sets'
+											id='user-sets'
+											class='stats-input'
+										/>
+										<input
+											type='text'
+											placeholder='Reps'
+											id='user-reps'
+											class='stats-input'
+										/>
+										<input
+											type='text'
+											placeholder='Weight'
+											id='user-weight'
+											class='stats-input'
+										/>
 
-                {{#each workouts as |workout|}}
-                  <div class="">
-                    <div class="">
-                      <h4><a
-                          href="/workouts/{{workout.id}}"
-                        >{{workout.name}}</a></h4>
-                    </div>
-                    <div class="">
-                      <button class="" data-id="{{workout.id}}">DELETE</button>
-                    </div>
-                  </div>
-                {{/each}}
-              </div>
-            {{/if}}
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-12 col-md-6 pb-5">
-      <div class="card card-custom">
-        <div class="card-body">
-          <h5 class="card-title">Stats Graph
-          </h5>
-          <br />
-        </div>
-      </div>
-    </div>
-  </div>
+									</div>
+								</div>
+							</div>
+							<button type='submit' class='hide'>Submit</button>
+						</form>
+						{{#if workout.length}}
+							<div class='col-md-6 blog-list'>
+								<h3>Workouts</h3>
+
+								{{#each workout as |workout|}}
+									<div class=''>
+										<div class=''>
+											<h4><a href='/workout/{{workout.id}}'>{{workout.name}}</a></h4>
+										</div>
+										<div class=''>
+											<button class='' data-id='{{workout.id}}'>DELETE</button>
+										</div>
+									</div>
+								{{/each}}
+							</div>
+						{{/if}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='col-sm-12 col-md-6 pb-5'>
+			<div class='card card-custom'>
+				<div class='card-body'>
+					<h5 class='card-title'>Stats Graph
+					</h5>
+					<br />
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 {{! 
@@ -119,3 +115,5 @@
     </div>
   </div>
 </div> }}
+
+<script src='./js/profile.js'></script>
