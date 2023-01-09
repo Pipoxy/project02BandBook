@@ -1,15 +1,14 @@
 const router = require('express').Router();
 const { Workouts } = require('../../models');
-const authorized = require('../../helpers/authorized');
+const authorized = require('../../utils/auth');
 
-router.post('/', authorized, async (req, res) => {
+router.post('/', async (req, res) => {
 	try {
 		const newWorkout = await Workouts.create({
 			...req.body,
 			user_id: req.session.user_id,
 		});
-
-		res.status(500).json(newWorkout);
+		res.status(200).json(newWorkout);
 	} catch (err) {
 		res.status(400).json(err);
 	}
