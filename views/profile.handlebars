@@ -46,6 +46,22 @@
 							</div>
 							<button type='submit' class='hide'>Submit</button>
 						</form>
+						{{#if workouts.length}}
+							<div class='col-md-6 blog-list'>
+								<h3>Workouts</h3>
+
+								{{#each workouts as |workout|}}
+									<div class=''>
+										<div class=''>
+											<h4><a href='/workouts/{{workout.id}}'>{{workout.name}}</a></h4>
+										</div>
+										<div class=''>
+											<button class='' data-id='{{workout.id}}'>DELETE</button>
+										</div>
+									</div>
+								{{/each}}
+							</div>
+						{{/if}}
 					</div>
 				</div>
 			</div>
