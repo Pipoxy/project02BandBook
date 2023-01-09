@@ -6,17 +6,16 @@ const newWorkoutHandler = async (event) => {
 	const weight = document.querySelector('#user-weight').value.trim();
 
 	if (workout && sets && reps && weight) {
-		console.log(workout, sets, reps, weight);
-		const response = await fetch(`/api/workout`, {
-			method: 'POST',
-			body: JSON.stringify({ workout, sets, reps, weight }),
-			headers: {
-				'Content-Type': 'application/json',
-			},
+		console.log(workout,sets,reps,weight);
+		const response = await fetch(`/api/workout`,{
+			method: "POST",
+			body: JSON.stringify({ workout,sets,reps,weight })
 		});
+		console.log(response);
 
 		if (response.ok) {
-			document.location.replace('/profile');
+			document.location.replace('/login');
+			console.log(response);
 		} else {
 			alert('Failed to create workout');
 		}
@@ -27,7 +26,7 @@ const delButtonHandler = async (event) => {
 	if (event.target.hasAttribute('data-id')) {
 		const id = event.target.getAttribute('data-id');
 
-		const response = await fetch(`/api/workout/${id}`, {
+		const response = await fetch(`/api/workout/${id}`,{
 			method: 'DELETE',
 		});
 
@@ -41,8 +40,8 @@ const delButtonHandler = async (event) => {
 
 document
 	.querySelector('.new-workout-form')
-	.addEventListener('submit', newWorkoutHandler);
+	.addEventListener('submit',newWorkoutHandler);
 
 document
 	.querySelector('.blog-list')
-	.addEventListener('click', delButtonHandler);
+	.addEventListener('click',delButtonHandler);

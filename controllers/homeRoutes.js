@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const { Workouts, User } = require("../models");
+const { Workouts,User } = require("../models");
 const authorized = require("../helpers/authorized");
 
 // get all posts for homepage
-router.get("/", async (req, res) => {
+router.get("/",async (req,res) => {
   if (req.session.logged_in) {
     res.redirect("/profile");
     return;
@@ -12,9 +12,9 @@ router.get("/", async (req, res) => {
   res.render("login");
 });
 
-router.get("/workout/:id", async (req, res) => {
+router.get("/workout/:id",async (req,res) => {
   try {
-    const workoutData = await Workouts.findByPk(req.params.id, {
+    const workoutData = await Workouts.findByPk(req.params.id,{
       include: [
         {
           model: User,
@@ -25,7 +25,7 @@ router.get("/workout/:id", async (req, res) => {
 
     const workout = workoutData.get({ plain: true });
 
-    res.render("workout", {
+    res.render("workouts",{
       ...workout,
       logged_in: req.session.logged_in,
     });
@@ -34,15 +34,15 @@ router.get("/workout/:id", async (req, res) => {
   }
 });
 
-router.get("/profile", authorized, async (req, res) => {
+router.get("/profile",authorized,async (req,res) => {
   try {
-    res.render("profile", { logged_in: true });
+    res.render("profile",{ logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/login", async (req, res) => {
+router.get("/login",async (req,res) => {
   if (req.session.logged_in) {
     res.redirect("/profile");
     return;
@@ -51,7 +51,7 @@ router.get("/login", async (req, res) => {
   res.render("login");
 });
 
-router.get("/signup", async (req, res) => {
+router.get("/signup",async (req,res) => {
   try {
     res.render("signup");
   } catch (err) {
