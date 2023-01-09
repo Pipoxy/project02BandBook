@@ -1,4 +1,4 @@
-<h2>Welcome, {{user_name}}</h2>
+<h2>Welcome, {{user.name}}</h2>
 
 <div class='container-fluid'>
 	<div class='row'>
@@ -48,24 +48,28 @@
 							</div>
 							<button type='submit'>Submit</button>
 						</form>
-						{{#if workout.length}}
-							<div class='col-md-6 blog-list'>
-								<h3>Workouts</h3>
+						{{#if workouts.length}}
+						<div class="container-fluid">
+							<div class="row">
+								<div class='workout-list'>
+									<h3>Workouts</h3>
 
-								{{#each workout as |workout|}}
-									<div class=''>
+									{{#each workouts as |workout|}}
 										<div class=''>
-											<h4><a href='/workout/{{workout.id}}'>{{workout.name}}</a></h4>
+											<div class=''>
+												<h4><a href='/workout/{{workout.user_id}}'>{{workout.name}}</a></h4>
+											</div>
+												<p>Sets, {{workout.sets}} </p>
+												<p>Reps, {{workout.reps}} </p>
+												<p>Weight, {{workout.weight}}lbs</p>
+											<div class=''>
+											<button class='btn' data-id='{{workout.id}}'>DELETE</button>
+											</div>
 										</div>
-                  <div>sets, {{workout.sets}} </div>
-                   <div>sets, {{workout.reps}} </div>
-                    <div>sets, {{workout.weight}} </div>
-										<div class=''>
-											<button class='' data-id='{{workout.id}}'>DELETE</button>
-										</div>
-									</div>
-								{{/each}}
+									{{/each}}
+								</div>
 							</div>
+						</div>
 						{{/if}}
 					</div>
 				</div>
@@ -83,7 +87,7 @@
 	</div>
 </div>
 
-{{! 
+
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
           <script>
@@ -119,6 +123,6 @@
       </div>
     </div>
   </div>
-</div> }}
+</div> 
 
 <script src='./js/profile.js'></script>

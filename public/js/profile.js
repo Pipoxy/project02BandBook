@@ -16,7 +16,7 @@ const newWorkoutHandler = async (event) => {
 		console.log(response);
 
 		if (response.ok) {
-			// document.location.replace('/profile');
+			document.location.replace('/profile');
 		} else {
 			alert('Failed to create workout');
 		}
@@ -44,5 +44,5 @@ document
 	.addEventListener('submit', newWorkoutHandler);
 
 document
-	.querySelector('.blog-list')
+	.querySelector('.workout-list')
 	.addEventListener('click', delButtonHandler);
