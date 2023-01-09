@@ -2,16 +2,13 @@ const router = require('express').Router();
 const { Workouts } = require('../../models');
 const authorized = require('../../helpers/authorized');
 
-router.post('/',authorized,async (req,res) => {
+router.post('/',async (req,res) => {
   try {
-    // res.send("Hell Ya");
-    console.log("It worked");
-    // const newWorkout = await Workouts.create({
-    //   ...req.body,
-    //   user_id: req.session.user_id,
-    // });
-
-    // res.status(500).json(newWorkout);
+    const newWorkout = await Workouts.create({
+      ...req.body,
+      user_id: req.session.user_id
+    });
+    res.status(200).json(newWorkout);
   } catch (err) {
     res.status(400).json(err);
   }
