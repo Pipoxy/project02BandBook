@@ -1,4 +1,3 @@
-
 const newWorkoutHandler = async (event) => {
 	event.preventDefault();
 	const workout = document.querySelector('#user-workout').value.trim();
@@ -17,9 +16,25 @@ const newWorkoutHandler = async (event) => {
 		});
 
 		if (response.ok) {
-			document.location.replace('/profile');
+			// document.location.replace('/profile');
 		} else {
 			alert('Failed to create workout');
+		}
+	}
+};
+
+const delButtonHandler = async (event) => {
+	if (event.target.hasAttribute('data-id')) {
+		const id = event.target.getAttribute('data-id');
+
+		const response = await fetch(`/api/workout/${id}`, {
+			method: 'DELETE',
+		});
+
+		if (response.ok) {
+			document.location.replace('/profile');
+		} else {
+			alert('Failed to delete workout');
 		}
 	}
 };
@@ -27,3 +42,7 @@ const newWorkoutHandler = async (event) => {
 document
 	.querySelector('.new-workout-form')
 	.addEventListener('submit', newWorkoutHandler);
+
+document
+	.querySelector('.blog-list')
+	.addEventListener('click', delButtonHandler);

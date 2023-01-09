@@ -1,51 +1,75 @@
-<div class='container-fluid'>
-	<div class='row'>
-		<div class='col-sm-12 col-md-6 pb-5'>
-			<div class='card card-custom'>
-				<div class='card-body'>
-					<h5 class='card-title'>Recent Workouts
-					</h5>
-					<br />
-					<div class='container-fluid'>
-						<form class='row new-workout-form'>
-							<div class='col-6'>
-								<div class='card card-custom workout-card'>
-									<div class='card-body'>
-										<h6 class='card-title'>Workout
-										</h6>
-										<input type='text' placeholder='Workout Name' id='user-workout' />
-									</div>
-								</div>
-							</div>
-							<div class='col-6'>
-								<div class='card card-custom workout-card'>
-									<div class='card-body'>
-										<h6 class='card-title'>Stats
-										</h6>
-										<input
-											type='text'
-											placeholder='Sets'
-											id='user-sets'
-											class='stats-input'
-										/>
-										<input
-											type='text'
-											placeholder='Reps'
-											id='user-reps'
-											class='stats-input'
-										/>
-										<input
-											type='text'
-											placeholder='Weight'
-											id='user-weight'
-											class='stats-input'
-										/>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 pb-5">
+      <div class="card card-custom">
+        <div class="card-body">
+          <h5 class="card-title">Recent Workouts
+          </h5>
+          <br />
+          <div class="container-fluid">
+            <form class="row new-workout-form">
+              <div class="col-6">
+                <div class="card card-custom workout-card">
+                  <div class="card-body">
+                    <h6 class="card-title">Workout
+                    </h6>
+                    <input
+                      type="text"
+                      placeholder="Workout Name"
+                      id="user-workout"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card card-custom workout-card">
+                  <div class="card-body">
+                    <h6 class="card-title">Stats
+                    </h6>
+                    <input
+                      type="text"
+                      placeholder="Sets"
+                      id="user-sets"
+                      class="stats-input"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Reps"
+                      id="user-reps"
+                      class="stats-input"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Weight"
+                      id="user-weight"
+                      class="stats-input"
+                    />
+
 
 									</div>
 								</div>
 							</div>
-							<button type='submit' class='hide'>Submit</button>
+							<button type='submit'>Submit</button>
 						</form>
+						{{#if workouts.length}}
+							<div class='col-md-6 blog-list'>
+								<h3>Workouts</h3>
+
+								{{#each workouts as |workout|}}
+									<div class=''>
+										<div class=''>
+											<h4><a href='/workouts/{{workout.id}}'>{{workout.name}}</a></h4>
+										</div>
+                  <div>sets, {{workout.sets}} </div>
+                   <div>sets, {{workout.reps}} </div>
+                    <div>sets, {{workout.weight}} </div>
+										<div class=''>
+											<button class='' data-id='{{workout.id}}'>DELETE</button>
+										</div>
+									</div>
+								{{/each}}
+							</div>
+						{{/if}}
 					</div>
 				</div>
 			</div>
@@ -53,8 +77,8 @@
 		<div class='col-sm-12 col-md-6 pb-5'>
 			<div class='card card-custom'>
 				<div class='card-body'>
-					<h5 class='card-title'>Stats Graph
-					</h5>
+					<h5 class='card-title'>Stats Graph</h5>
+          <canvas id="workoutChart"/>
 					<br />
 				</div>
 			</div>
@@ -62,4 +86,40 @@
 	</div>
 </div>
 
-<script src='./js/profile.js'></script>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+          <script>
+            
+            const ctx = document.getElementById('workoutChart'); new Chart(ctx,
+            { type: 'line', data: { labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            datasets: [{ label: 'Deadlift', data: [1,2,3,4,5,6,7],
+            borderColor: "white", backgroundColor: "white",
+            pointBackgroundColor: "#55bae7", pointBorderColor: "#55bae7",
+            pointHoverBackgroundColor: "#55bae7", pointHoverBorderColor:
+            "#55bae7"}, 
+			{ label: 'Bench', data: [4, 5, 6, 7, 8, 9, 10],
+            borderColor: "green", backgroundColor:
+            "green", pointBackgroundColor: "#green", pointBorderColor:
+            "#green", pointHoverBackgroundColor: "#green",
+            pointHoverBorderColor: "#green"}, 
+
+			{ label: 'Power Lifting', data:
+            [11, 29, 25, 19, 15, 13, 8], borderColor: "yellow", backgroundColor:
+            "yellow", pointBackgroundColor: "#yellow", pointBorderColor:
+            "#yellow", pointHoverBackgroundColor: "#yellow",
+            pointHoverBorderColor: "#yellow"}, 
+
+			{ label: 'Squats', data:
+            [1, 9, 11, 22, 23, 24, 28], borderColor: "blue", backgroundColor:
+            "blue", pointBackgroundColor: "#blue", pointBorderColor:
+            "#blue", pointHoverBackgroundColor: "#blue",
+            pointHoverBorderColor: "#blue"}] } });
+          
+          </script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
