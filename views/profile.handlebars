@@ -45,22 +45,44 @@
                       class="stats-input"
                     />
 
-                  </div>
-                </div>
-              </div>
-              <button type="submit" class="hide">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-12 col-md-6 pb-5">
-      <div class="card card-custom">
-        <div class="card-body">
-          <h5 class="card-title">Stats Graph</h5>
-          <div>
-            <canvas id="workoutChart"></canvas>
-          </div>
+
+									</div>
+								</div>
+							</div>
+							<button type='submit' class='hide'>Submit</button>
+						</form>
+						{{#if workouts.length}}
+							<div class='col-md-6 blog-list'>
+								<h3>Workouts</h3>
+
+								{{#each workouts as |workout|}}
+									<div class=''>
+										<div class=''>
+											<h4><a href='/workouts/{{workout.id}}'>{{workout.name}}</a></h4>
+										</div>
+										<div class=''>
+											<button class='' data-id='{{workout.id}}'>DELETE</button>
+										</div>
+									</div>
+								{{/each}}
+							</div>
+						{{/if}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='col-sm-12 col-md-6 pb-5'>
+			<div class='card card-custom'>
+				<div class='card-body'>
+					<h5 class='card-title'>Stats Graph
+					</h5>
+					<br />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
