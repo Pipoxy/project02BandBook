@@ -89,40 +89,11 @@
 
 
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-{{#if workouts.length}}
-{{#each workouts as |workout|}}
-          <script>
-            
-            const ctx = document.getElementById('workoutChart'); new Chart(ctx,
-            { type: 'bar', data: { labels: ['Reps', 'Sets', 'Weight'],
-            datasets: [{ label: 'Reps', data: [1, 2, 3],
-            borderColor: "white", backgroundColor: "white",
-            pointBackgroundColor: "#55bae7", pointBorderColor: "#55bae7",
-            pointHoverBackgroundColor: "#55bae7", pointHoverBorderColor:
-            "#55bae7"}, 
-			{ label: 'Sets', data: [4, 5, 6],
-            borderColor: "green", backgroundColor:
-            "green", pointBackgroundColor: "#green", pointBorderColor:
-            "#green", pointHoverBackgroundColor: "#green",
-            pointHoverBorderColor: "#green"}, 
 
-			{ label: 'Weight', data:
-            [11, 29, 25], borderColor: "yellow", backgroundColor:
-            "yellow", pointBackgroundColor: "#yellow", pointBorderColor:
-            "#yellow", pointHoverBackgroundColor: "#yellow",
-            pointHoverBorderColor: "#yellow"}, 
-
-			] 
-			} }
-			);
-          
-          </script>
-{{/each}}
-{{/if}}
         </div>
       </div>
     </div>
   </div>
 </div> 
-
+<script src="./js/graph.js"></script>
 <script src='./js/profile.js'></script>
