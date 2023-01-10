@@ -15,22 +15,6 @@
 
 	<body>
 
-		{{!-- Old Code --}}
-
-		{{!-- <div class='flex-column justify-space-around'>
-			<header class='display-flex justify-space-between align-center p-2'>
-				<h1>
-					<span role='img' aria-label='weights'>💸</span>
-					<a href='/'>My Workout Tracker</a>
-				</h1>
-				<nav>
-					<!-- Conditionally render login or logout links -->
-					<!-- {{#if logged_in}} -->
-        <a href="/profile">profile</a> --}}
-		
-		
-		
-		{{!-- New Code --}}
 
 
 		<div class="container-fluid sticky-top">
@@ -41,7 +25,6 @@
 				<div class="col-sm-12 col-md-4 text-center custom-nav">
 
 					<a href="/profile" class="link-light">Profile</a>
-					<a href="/workout" class="link-light">Workouts</a>
 
 					<!-- Conditionally render login or logout links -->
 
@@ -57,15 +40,7 @@
      
 				</nav>
 			</header>
-			{{! <div class='card' style='width: 18rem;'>
-				<img src='...' class='card-img-top' alt='...' />
-				<div class='card-body'>
-					<h5 class='card-title'>Card title</h5>
-					<p class='card-text'>Some quick example text to build on the card title and
-						make up the bulk of the card's content.</p>
-					<a href='#' class='btn btn-primary'>Go somewhere</a>
-				</div>
-			</div> }}
+
 			<main class='container container-fluid mt-5'>
 				<!-- Render the sub layout -->
 				{{{body}}}

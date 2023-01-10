@@ -1,3 +1,5 @@
+<h2>Welcome, {{user.name}}</h2>
+
 <div class='container-fluid'>
 	<div class='row'>
 		<div class='col-sm-12 col-md-6 pb-5'>
@@ -44,23 +46,30 @@
 									</div>
 								</div>
 							</div>
-							<button type='submit' class='hide'>Submit</button>
+							<button class="hide" type='submit'>Submit</button>
 						</form>
 						{{#if workouts.length}}
-							<div class='col-md-6 blog-list'>
-								<h3>Workouts</h3>
+						<div class="container-fluid">
+							<div class="row">
+								<div class='workout-list'>
+									<h3>Workouts</h3>
 
-								{{#each workouts as |workout|}}
-									<div class=''>
-										<div class=''>
-											<h4><a href='/workouts/{{workout.id}}'>{{workout.name}}</a></h4>
+									{{#each workouts as |workout|}}
+										<div class='card card-custom input-card'>
+											<div class=''>
+												<h4>{{workout.name}}</h4>
+											</div>
+												<p>Sets: {{workout.sets}} </p>
+												<p>Reps: {{workout.reps}} </p>
+												<p>Weight: {{workout.weight}}lbs</p>
+											<div class=''>
+											<button class='btn btn-danger' data-id='{{workout.id}}'>DELETE</button>
+											</div>
 										</div>
-										<div class=''>
-											<button class='' data-id='{{workout.id}}'>DELETE</button>
-										</div>
-									</div>
-								{{/each}}
+									{{/each}}
+								</div>
 							</div>
+						</div>
 						{{/if}}
 					</div>
 				</div>
@@ -69,8 +78,8 @@
 		<div class='col-sm-12 col-md-6 pb-5'>
 			<div class='card card-custom'>
 				<div class='card-body'>
-					<h5 class='card-title'>Stats Graph
-					</h5>
+					<h5 class='card-title'>Stats Graph</h5>
+          <canvas id="workoutChart"/>
 					<br />
 				</div>
 			</div>
@@ -78,4 +87,13 @@
 	</div>
 </div>
 
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<script src="./js/graph.js"></script>
 <script src='./js/profile.js'></script>
