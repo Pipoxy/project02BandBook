@@ -46,7 +46,7 @@
 									</div>
 								</div>
 							</div>
-							<button type='submit'>Submit</button>
+							<button class="hide" type='submit'>Submit</button>
 						</form>
 						{{#if workouts.length}}
 						<div class="container-fluid">
@@ -55,15 +55,15 @@
 									<h3>Workouts</h3>
 
 									{{#each workouts as |workout|}}
-										<div class=''>
+										<div class='card card-custom input-card'>
 											<div class=''>
-												<h4><a href='/workout/{{workout.user_id}}'>{{workout.name}}</a></h4>
+												<h4>{{workout.name}}</h4>
 											</div>
-												<p>Sets, {{workout.sets}} </p>
-												<p>Reps, {{workout.reps}} </p>
-												<p>Weight, {{workout.weight}}lbs</p>
+												<p>Sets: {{workout.sets}} </p>
+												<p>Reps: {{workout.reps}} </p>
+												<p>Weight: {{workout.weight}}lbs</p>
 											<div class=''>
-											<button class='btn' data-id='{{workout.id}}'>DELETE</button>
+											<button class='btn btn-danger' data-id='{{workout.id}}'>DELETE</button>
 											</div>
 										</div>
 									{{/each}}
@@ -89,36 +89,36 @@
 
 
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+{{#if workouts.length}}
+{{#each workouts as |workout|}}
           <script>
             
             const ctx = document.getElementById('workoutChart'); new Chart(ctx,
-            { type: 'line', data: { labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            datasets: [{ label: 'Deadlift', data: [1,2,3,4,5,6,7],
+            { type: 'bar', data: { labels: ['Reps', 'Sets', 'Weight'],
+            datasets: [{ label: 'Reps', data: [1, 2, 3],
             borderColor: "white", backgroundColor: "white",
             pointBackgroundColor: "#55bae7", pointBorderColor: "#55bae7",
             pointHoverBackgroundColor: "#55bae7", pointHoverBorderColor:
             "#55bae7"}, 
-			{ label: 'Bench', data: [4, 5, 6, 7, 8, 9, 10],
+			{ label: 'Sets', data: [4, 5, 6],
             borderColor: "green", backgroundColor:
             "green", pointBackgroundColor: "#green", pointBorderColor:
             "#green", pointHoverBackgroundColor: "#green",
             pointHoverBorderColor: "#green"}, 
 
-			{ label: 'Power Lifting', data:
-            [11, 29, 25, 19, 15, 13, 8], borderColor: "yellow", backgroundColor:
+			{ label: 'Weight', data:
+            [11, 29, 25], borderColor: "yellow", backgroundColor:
             "yellow", pointBackgroundColor: "#yellow", pointBorderColor:
             "#yellow", pointHoverBackgroundColor: "#yellow",
             pointHoverBorderColor: "#yellow"}, 
 
-			{ label: 'Squats', data:
-            [1, 9, 11, 22, 23, 24, 28], borderColor: "blue", backgroundColor:
-            "blue", pointBackgroundColor: "#blue", pointBorderColor:
-            "#blue", pointHoverBackgroundColor: "#blue",
-            pointHoverBorderColor: "#blue"}] } });
+			] 
+			} }
+			);
           
           </script>
-
+{{/each}}
+{{/if}}
         </div>
       </div>
     </div>
